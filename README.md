@@ -1,6 +1,6 @@
 # SIQ Cadastre Model
 
-***NOTE: This repository is for a project that is at an early stage of development so some of the objects referenced to not yet exist. March, 2023***
+***NOTE: This repository is for a project that is at an early stage of development so much of the content for this model does not exist yet. March, 2023***
 
 This repository contains a data model for Cadastral information in Queensland. It is a system-independent model created using the https://www.w3.org/TR/owl2-primer/[Web Ontology Language (OWL)] that may be realised in any system that can meet its modelled elements.
 
