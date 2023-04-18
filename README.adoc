@@ -32,7 +32,7 @@ This class hierarchy is shown graphically in the figure below:
 
 [id=fig-cadastre]
 .The Cadastre Component Model
-image::images/cadastre.png[]
+image::img/cadastre.png[]
 
 ## Rights and License
 
