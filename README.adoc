@@ -2,9 +2,37 @@
 
 ***NOTE: This repository is for a project that is at an early stage of development so much of the content for this model does not exist yet. March, 2023***
 
+This model is online at **https://linked.data.gov.au/def/cad**
+
 This repository contains a data model for Cadastral information in Queensland. It is a system-independent model created using the https://www.w3.org/TR/owl2-primer/[Web Ontology Language (OWL)] that may be realised in any system that can meet its modelled elements.
 
 This model is both a stand-alone model for cadastral information and also a _Component Model_ part of an integrative multi-model regime known as a _Supermodel_. The SIQ Supermodel aims to integrate cadastre, address, place name and other information. For more information about the SIQ Supermodel, see the https://github.com/Spatial-Information-QLD/supermodel[Supermodel's temporary home]
+
+## Cadastre Class Hierarchy
+
+* `geo:FeatureCollection`
+** `cad:ParcelCollection`
+*** `cad:Property`
+**** `cad:TitledProperty`
+**** `cad:ValuationProperty`
+**** `cad:RuralProperty`
+* `geo:Feature`
+** `cad:Parcel`
+*** `cad:BaseParcel`
+**** `cad:RoadParcel`
+***** `cad:IntersectionParcel`
+**** `cad:WaterParcel`
+**** `cad:OtherParcel`
+***** `cad:UnlinkedParcel`
+*** `cad:Building`
+*** `cad:Easement`
+*** `cad:StrataParcel`
+
+This class hierarchy is shown graphically in the figure below:
+
+[id=fig-cadastre]
+.The Cadastre Component Model
+image::images/cadastre.png[]
 
 ## Rights and License
 
