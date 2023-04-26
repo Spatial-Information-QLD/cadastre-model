@@ -1,0 +1,175 @@
+PREFIX cad: <https://linked.data.gov.au/def/cad/>
+PREFIX csdm: <https://linked.data.gov.au/def/csdm/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+cad:Building
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Parcel ;
+    sdo:name "Building" ;
+    sdo:description "Building"@en ;
+.
+
+cad:Easement
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Parcel ;
+    sdo:name "Easement" ;
+    sdo:description "Easement"@en ;
+.
+
+cad:IntersectionParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:BaseParcel ;
+    sdo:name "Intersection Parcel" ;
+    sdo:description "Intersection Parcel"@en ;
+.
+
+cad:InterstateParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:BaseParcel ;
+    sdo:name "Interstate Parcel" ;
+    sdo:description "Interstate Parcel"@en ;
+.
+
+cad:LotParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:BaseParcel ;
+    sdo:name "Lot Parcel" ;
+    sdo:description "Lot Parcel"@en ;
+.
+
+cad:RoadParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:BaseParcel ;
+    sdo:name "Road Parcel" ;
+    sdo:description "Road Parcel"@en ;
+.
+
+cad:RuralProperty
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Property ;
+    sdo:name "Rural Property" ;
+    sdo:description "Rural Property"@en ;
+.
+
+cad:StrataParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Parcel ;
+    sdo:name "Strata Parcel" ;
+    sdo:description "Strata Parcel"@en ;
+.
+
+cad:TitledProperty
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Property ;
+    sdo:name "Titled Property" ;
+    sdo:description "Titled Property"@en ;
+.
+
+cad:ValuationProperty
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Property ;
+    sdo:name "Valuation Property" ;
+    sdo:description "Valuation Property"@en ;
+.
+
+cad:VolumetricParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:Parcel ;
+    sdo:name "Volumetric Parcel" ;
+    sdo:description "Volumetric Parcel"@en ;
+.
+
+cad:WaterParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf cad:BaseParcel ;
+    sdo:name "Water Parcel" ;
+    sdo:description "Water Parcel"@en ;
+.
+
+geo:Feature
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    sdo:name "Feature" ;
+    sdo:description "A discrete spatial phenomenon in a universe of discourse"@en ;
+    dcterms:provenance "Taken, unchanged, from the GeoSPARQL 1.1 Ontology" ;
+.
+
+geo:FeatureCollection
+    a owl:Class ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    sdo:name "Feature Collection" ;
+    sdo:description "A collection of individual Features"@en ;
+    dcterms:provenance "Taken, unchanged, from the GeoSPARQL 1.1 Ontology" ;
+.
+
+csdm:Parcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/csdm> ;
+    rdfs:subClassOf geo:Feature ;
+    sdo:name "Parcel" ;
+    sdo:description "Parcel"@en ;
+    dcterms:provenance "Taken, unchanged, from the CSDM" ;
+.
+
+csdm:ParcelAggregate
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/csdm> ;
+    rdfs:subClassOf geo:FeatureCollection ;
+    sdo:name "Parcel Aggregate" ;
+    sdo:description "Parcel Aggregate"@en ;
+    dcterms:provenance "Taken, unchanged, from the CSDM" ;
+.
+
+cad:Property
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf csdm:ParcelAggregate ;
+    sdo:name "Property" ;
+    sdo:description "Property"@en ;
+.
+
+cad:BaseParcel
+    a owl:Class ;
+    rdfs:isDefinedBy <https://linked.data.gov.au/def/cad> ;
+    rdfs:subClassOf csdm:Parcel ;
+    sdo:name "Base Parcel" ;
+    sdo:description "Base Parcel"@en ;
+.
+
+<https://linked.data.gov.au/def/cad>
+    a owl:Ontology ;
+    dcterms:provenance "This model was created for Queensland Spatial Information's CAM (Cadastre & Addressing Modernisation) project in 2023." ;
+    owl:versionIRI cad:0.0.1 ;
+    owl:versionInfo "0.0.1" ;
+    sdo:codeRepository "https://github.com/spatial-information-qld/cadastre-model/"^^xsd:anyURI ;
+    sdo:copyrightHolder <https://linked.data.gov.au/org/qld-resources> ;
+    sdo:copyrightNotice "(c) The State of Queensland (Department of Resources) 2023" ;
+    sdo:copyrightYear "2023"^^xsd:gYear ;
+    sdo:dateCreated "2023-04-26"^^xsd:date ;
+    sdo:dateIssued "2023-04-26"^^xsd:date ;
+    sdo:dateModified "2023-04-26"^^xsd:date ;
+    sdo:description """This model is for Cadastral information in Queensland, however it is a candidate ANZ model also, and may, in the near future, be expanded with feedback form other jurisdictions and a process through the Inter Governmental Committee on Surveying & Mapping (ICSM) to ensure it covers all ANZ jurisdictions' needs.
+
+This model is a stand-alone model for cadastral information, however it is also designed to work with the ICSM's 3D Cadastral Survey Data Model and is a Component Model part of an integrative multi-model regime for Spatial Information Queensland known as a Supermodel. The SIQ Supermodel aims to integrate cadastre, address, place name and other information. For more information about the SIQ Supermodel, see the Supermodel’s temporary home.
+    """@en ;
+    sdo:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sdo:name "Cadastre Model" ;
+.
+
