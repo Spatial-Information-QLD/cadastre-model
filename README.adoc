@@ -11,22 +11,23 @@ This model is both a stand-alone model for cadastral information and also a _Com
 == Cadastre Class Hierarchy
 
 * `geo:FeatureCollection`
-** `cad:ParcelAggregate`
+** `csdm:ParcelAggregate`
 *** `cad:Property`
 **** `cad:TitledProperty`
 **** `cad:ValuationProperty`
 **** `cad:RuralProperty`
 * `geo:Feature`
-** `cad:Parcel`
+** `csdm:Parcel`
 *** `cad:BaseParcel`
+**** `cad:LotParcel`
 **** `cad:RoadParcel`
-**** `cad:IntersectionParcel`
-**** `cad:WaterParcel`
+***** `cad:IntersectionParcel`
+***** `cad:TransportRouteParcel`
+**** `cad:WatercourseParcel`
 **** `cad:InterstateParcel`
-*** `cad:Building`
-*** `cad:Easement`
-*** `cad:StrataParcel`
-*** `cad:VolumetricParcel`
+*** `cad:BuildingStrataParcel`
+*** `cad:EasementParcel`
+*** `cad:InterestParcel`
 
 This class hierarchy is shown graphically in the figure below:
 
