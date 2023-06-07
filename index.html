@@ -445,10 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong><strong>NOTE: This repository is for a project that is at an early stage of development so much of the content for this model does not exist yet. March, 2023</strong></strong></p>
-</div>
-<div class="paragraph">
-<p>This model is online at <strong><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></strong></p>
+<p>This model is online at <strong><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></strong>.</p>
 </div>
 <div class="paragraph">
 <p>This repository contains a data model for Cadastral information in Queensland. It is a system-independent model created using the <a href="https://www.w3.org/TR/owl2-primer/">Web Ontology Language (OWL)</a> that may be realised in any system that can meet its modelled elements.</p>
@@ -464,25 +461,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><code>geo:FeatureCollection</code></p>
+<p>SpatialObject</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>csdm:ParcelAggregate</code></p>
+<p>Feature</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>cad:Property</code></p>
+<p>Parcel</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>cad:TitledProperty</code></p>
+<p>BaseParcel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>LotParcel</p>
 </li>
 <li>
-<p><code>cad:ValuationProperty</code></p>
+<p>RoadParcel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>IntersectionParcel</p>
 </li>
 <li>
-<p><code>cad:RuralProperty</code></p>
+<p>TransportRouteParcel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>WaterParcel</p>
+</li>
+<li>
+<p>InterstateParcel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>NonBaseParcel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>BuildingParcel</p>
+</li>
+<li>
+<p>EasementParcel</p>
+</li>
+<li>
+<p>InterestParcel</p>
 </li>
 </ul>
 </div>
@@ -494,50 +524,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p><code>geo:Feature</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>csdm:Parcel</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cad:BaseParcel</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cad:LotParcel</code></p>
+<p>Geometry</p>
 </li>
 <li>
-<p><code>cad:RoadParcel</code></p>
+<p>FeatureCollection</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>cad:IntersectionParcel</code></p>
+<p>ParcelAggregate</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Property</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AddressableProperty</p>
 </li>
 <li>
-<p><code>cad:TransportRouteParcel</code></p>
+<p>RuralProperty</p>
+</li>
+<li>
+<p>TitleProperty</p>
+</li>
+<li>
+<p>ValuationProperty</p>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p><code>cad:WatercourseParcel</code></p>
-</li>
-<li>
-<p><code>cad:InterstateParcel</code></p>
-</li>
 </ul>
 </div>
-</li>
-<li>
-<p><code>cad:BuildingStrataParcel</code></p>
-</li>
-<li>
-<p><code>cad:EasementParcel</code></p>
-</li>
-<li>
-<p><code>cad:InterestParcel</code></p>
 </li>
 </ul>
 </div>
@@ -552,7 +569,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="fig-cadastre" class="imageblock">
 <div class="content">
-<img src="img/overview.png" alt="overview">
+<img src="img/overview.svg" alt="overview" width="60%">
 </div>
 <div class="title">Figure 1. The Cadastre Component Model</div>
 </div>
@@ -568,7 +585,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>&copy; The State of Queensland (Department of Resources) 2023</p>
 </div>
 <div class="paragraph">
-<p>This information is available for reuse under the [Creative Commons 4.0 license](<a href="https://creativecommons.org/licenses/by/4.0/" class="bare">https://creativecommons.org/licenses/by/4.0/</a>), see the [LICENSE](LICENSE) file for the deed.</p>
+<p>This information is available for reuse under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>, see the LICENSE file for the deed.</p>
 </div>
 <div class="paragraph">
 <p>Much of the vocabulary content here is copied from elsewhere and, where this has occurred, the vocabulary source is noted so that the source information licensing and rights may be discovered.</p>
@@ -582,25 +599,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>For more information about these vocabularies, contact:</p>
 </div>
 <div class="paragraph">
-<p><strong>Spatial Information</strong>
-GeoResources Division
-Department of Resources
-Queensland Government
+<p><strong>Spatial Information</strong> <br>
+GeoResources Division <br>
+Department of Resources <br>
+Queensland Government <br>
 &lt;<a href="mailto:CadastralAdminDataHelp@resources.qld.gov.au">CadastralAdminDataHelp@resources.qld.gov.au</a>&gt;</p>
 </div>
 <div class="paragraph">
 <p>For further information, please visit:</p>
 </div>
 <div class="paragraph">
-<p><a href="https://www.resources.qld.gov.au/data-mapping" class="bare">https://www.resources.qld.gov.au/data-mapping</a>
+<p><a href="https://www.resources.qld.gov.au/data-mapping" class="bare">https://www.resources.qld.gov.au/data-mapping</a> <br>
 <a href="https://qldspatial.information.qld.gov.au/" class="bare">https://qldspatial.information.qld.gov.au/</a></p>
 </div>
 <div class="paragraph">
 <p>For technical vocabulary implementation questions, contact:</p>
 </div>
 <div class="paragraph">
-<p><strong>Nicholas Car</strong>
-&lt;<a href="mailto:nick@kurrawong.ai">nick@kurrawong.ai</a>&gt;
+<p><strong>Nicholas Car</strong> <br>
+&lt;<a href="mailto:nick@kurrawong.ai">nick@kurrawong.ai</a>&gt;<br>
 <em>Contractor to Spatial Information Qld.</em></p>
 </div>
 </div>
@@ -608,7 +625,7 @@ Queensland Government
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-08 22:12:09 UTC
+Last updated 2023-06-07 20:18:47 UTC
 </div>
 </div>
 </body>
