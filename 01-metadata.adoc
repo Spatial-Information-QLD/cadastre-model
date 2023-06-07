@@ -1,0 +1,20 @@
+== Metadata
+
+[width=75%, frame=none, grid=none, cols="1,5"]
+|===
+|**IRI** | `https://linked.data.gov.au/def/cad`
+|**Preferred Label** | Cadastre Model
+|**Definition** | A Semantic Web data model of cadastre information. It caters specifically for Queensland's data management needs.
+|**Created** | 2023-05-11
+|**Modified** | 2023-06-07
+|**Issued** | 0000-00-00 - _not formally issued yet_
+|**Creator** | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
+|**Publisher** | https://linked.data.gov.au/org/qsi[Queensland Spatial Information]
+|**Provenance** | This model was made for Queensland Spatial Information, a unit of the Queensland Department of Resources, to assist with their future address and roads database design. It is a Component Model of their 'QSI Supermodel' which includes models for Address, Geographical Names and Cadastral information which are all designed to work together, however they may all be used independently too.
+|**Status** | Beta version
+|**Version** | `cad:0.0.1`
+|**Code Repository** | https://github.com/Spatial-Information-QLD/cadastre-model
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
+|**Copyright** | &copy; The State of Queensland (Department of Resources) 2020-2023
+|**Machine-readable form (RDF)** | https://linked.data.gov.au/def/cad.ttl
+|===

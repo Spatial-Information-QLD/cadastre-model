@@ -1,0 +1,15 @@
+== Requirements
+
+Here are the itemised Requirements referenced in the <<Sources of Requirements>> subsection of the <<Introduction>> and note for them on how this model satisfies them.
+
+=== Requirements List
+
+[cols="1,2,3"]]
+|===
+| ID | Name | Description
+
+| Req01 | _MUST_ be presented as a system-independent expression of Queensland's cadastral data model | This model must be presented at the conceptual/logical levels and not be dependent on a particular (physical) implementation
+| Req02 | _MUST_ allow for the integration of cadastral information with feature labelling information, such as addressing, feature naming and road naming | This model defines spatial object classes and names may be applied to objects in those classes. This model must provide classing and/or other properties that allow feature naming to be assigned to objects and for the assignment to be validatable
+| Req03 | _MUST_ act as a candidate (inter)national cadastral data model for Australia & New Zealand, should ANZ move to a harmonised model | This model must be generic enough, andor extensible enough, to be likely able to cater for other ANZ jurisdictions' parcel types
+| Req04 | _MUST_ allow for interoperability with other major spatial data initiatives in Australia, in particular the _FSDF Supermodel_ <<FSDFSM>> | This model must show how it is conformant to other initiatives, in particular the <<FSDFSM>>
+|===
