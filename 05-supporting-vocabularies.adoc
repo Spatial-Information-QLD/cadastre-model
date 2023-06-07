@@ -1,0 +1,15 @@
+== Supporting Vocabularies
+
+This model depends on several vocabularies to give specific values to properties.
+
+=== Cadastral Interests
+
+This vocabulary is...
+
+|===
+| IRI | Name | Description | Status | Usage directive
+
+| `cadint:x` | X | Xxx | original | Use
+|===
+
+This vocabulary is available in machine-readable form at *https://linked.data.gov.au/def/cadint*.

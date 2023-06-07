@@ -1,0 +1,39 @@
+== Bibliography
+
+* [[CONNEGP]] [CONNEGP] World Wide Web Consortium, _Content Negotiation by Profile_, W3C Working Draft (20 March 2022). https://w3c.github.io/dx-connegp/connegp/
+
+* [[CSDM]] [CSDM] Intergovernmental Committee on Surveying & Mapping (ICSM), _ICSM Conceptual Model for 3D Cadastral Survey Dataset Submissions_ (CSDM), Semantic Web data model (2022). https://linked.data.gov.au/def/csdm
+
+* [[FL]] [FLM] The State of Queensland (Department of Resources). _Feature Labelling Model_. Semantic Web data model (2023). https://linked.data.gov.au/def/fl
+
+* [[FSDFSM]] [FSDFSM] Intergovernmental Committee on Surveying & Mapping (ICSM), _FSDF Supermodel_. Semantic Web data model (2022) https://linked.data.gov.au/def/fsdf-supermodel
+
+* [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_ (2021). OGC Implementation Specification. http://www.opengis.net/doc/IS/geosparql/1.1
+
+* [[ISO-IEC-14977]] [ISO-IEC-14977] International Organization for Standardization, _ISO/IEC 14977 : 1996(E): Extended Backus–Naur form_. International Organization for Standardization (1996). https://www.cl.cam.ac.uk/~mgk25/iso-14977.pdf
+
+* [[ISO19101-1]] [ISO19101-1] International Organization for Standardization, _ISO 19101-1:2014 Geographic information — Reference model — Part 1: Fundamentals_ (2014)
+
+* [[ISO19125-1]] [ISO19125-1] International Organization for Standardization, _ISO 19125-1: Geographic information — Simple Feature Access - Part 1: Common Architecture_ (2004)
+
+* [[ISO19156]] [ISO19156] International Organization for Standardization, _ISO 19156: Geographic information — Observations and measurements_ (2011)
+
+* [[ISO19160-1]] [ISO19160-1] International Organization for Standardization, _ISO 19160-1: Addressing Part 1: Conceptual model_ (2015). https://www.iso.org/standard/61710.html
+
+* [[OWL]] [OWL] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
+
+* [[PROF]] [PROF] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
+* [[PROV]] [PROV] World Wide Web Consortium, _The Profiles Vocabulary_, W3C Working Group Note (18 December 2019). https://www.w3.org/TR/dx-prof/
+
+* [[RDF]] [RDF] World Wide Web Consortium, _RDF 1.2 Concepts and Abstract Syntax_, W3C Recommendation (02 June 2023). https://www.w3.org/TR/rdf12-concepts/
+
+* [[RDFS]] [RDFS] World Wide Web Consortium, _RDF 1.2 Schema_, W3C Recommendation (16 May 2023). https://www.w3.org/TR/rdf12-schema/
+
+* [[SDO]] [SDO] W3C Schema.org Community Group, _schema.org_. Community ontology (2015). https://schema.org
+
+* [[SSN]] [SSN] World Wide Web Consortium, _Semantic Sensor Network Ontology_, W3C Recommendation (19 October 2017). https://www.w3.org/TR/vocab-ssn/
+
+* [[SKOS]] [SKOS] World Wide Web Consortium, _SKOS Simple Knowledge Organization System Reference_, W3C Recommendation (18 August 2009). https://www.w3.org/TR/skos-reference/
+
+* [[TTL]] [TTL] World Wide Web Consortium, _RDF 1.1 Turtle Terse RDF Triple Language_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/turtle/

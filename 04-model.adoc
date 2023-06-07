@@ -1,0 +1,522 @@
+== Model
+
+This model is composed of Web Ontology Language (OWL) <<OWL>> Classes and Properties. While some properties may be restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) _Class Diagrams_ which treat Properties as sub-parts of particular classes.
+
+This model defines some Classes and Properties and also requires certain existing Cs & Ps for reuse. All Cs & Ps in this model, both defined and reused, are listed here with an indication of where the element is defined given in the _Is Defined By_ field.
+
+
+[[Classes]]
+=== Classes
+
+The Classes within this model form a single Class Hierarchy with <<SpatialObject>> as the root class. The top-level classes of <<SpatialObject>>, <<Feature>>, <<FeatureCollection>> and <<Geometry>> are all inherited from <<GEO>> and used here unchanged.
+
+* <<SpatialObject>>
+** <<Feature>>
+*** <<Parcel>>
+**** <<BaseParcel>>
+***** <<LotParcel>>
+***** <<RoadParcel>>
+****** <<IntersectionParcel>>
+****** <<TransportRouteParcel>>
+***** <<WaterParcel>>
+***** <<InterstateParcel>>
+**** <<NonBaseParcel>>
+***** <<BuildingParcel>>
+***** <<EasementParcel>>
+***** <<InterestParcel>>
+** <<Geometry>>
+** <<FeatureCollection>>
+*** <<ParcelAggregate>>
+**** <<Property>>
+***** <<AddressableProperty>>
+***** <<RuralProperty>>
+***** <<TitleProperty>>
+***** <<ValuationProperty>>
+
+[[SpatialObject]]
+==== Spatial Object
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:SpatialObject`
+| Preferred Label | Spatial Object
+| Definition | Anything spatial (being or having a shape, position or an extent)
+| Is Defined By | <<GEO>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model
+| Example
+a| [source,turtle]
+----
+ex:so-1
+    a geo:SpatialObject ;
+.
+----
+|===
+
+[[Feature]]
+==== Feature
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:Feature`
+| Preferred Label | Feature
+| Definition | A discrete spatial phenomenon in a universe of discourse
+| Is Defined By | <<GEO>>
+| Sub-class Of | <<SpatialObject>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model
+| Example 
+a| [source,turtle]
+----
+ex:f-1
+    a geo:Feature ;
+.
+----
+|===
+
+[[Parcel]]
+==== Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `csdm:Parcel`
+| Preferred Label | Parcel
+| Definition | A single or multi area, or solid, above, or below the surface of the earth as specified through legislated process. The extent of a cadastral parcel can be described by a surface or solid and topological relationships with other parcels
+| Is Defined By | This Model
+| Sub-class Of | <<Feature>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model, instead specialised forms of it (subclasses) are
+| Example
+a| [source,turtle]
+----
+ex:p-1
+    a csdm:Parcel ;
+.
+----
+|===
+
+[[BaseParcel]]
+==== Base Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:BaseParcel`
+| Preferred Label | Base Parcel
+| Definition | A Parcel which may not overlap other instances of the same class
+| Is Defined By | This Model
+| Sub-class Of | <<Parcel>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model, instead specialised forms of it (subclasses) are
+| Example
+a| [source,turtle]
+----
+ex:bp-1
+    a cad:Parcel ;
+.
+----
+|===
+
+[[LotParcel]]
+==== Lot Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:LotParcel`
+| Preferred Label | Lot Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<BaseParcel>>
+| Example
+a| [source,turtle]
+----
+ex:lp-1
+    a cad:LotParcel ;
+    geo:sfTouches
+        ex:lp-a ,
+        ex:lp-b ,
+        ex:lp-c ;
+    geo:hasGeometry [
+        a geo:Geometry ;
+        geo:asWKT "POLYGON (( ...cordinates... ))"^^geo:wktLiteral ;
+    ] ;
+.
+----
+|===
+
+[[RoadParcel]]
+==== Road Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:RoadParcel`
+| Preferred Label | Road Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<BaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[IntersectionParcel]]
+==== Intersection Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:IntersectionParcel`
+| Preferred Label | Intersection Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<RoadParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[TransportRouteParcel]]
+==== Transport Route Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:TransportRouteParcel`
+| Preferred Label | Transport Route Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<RoadParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[WaterParcel]]
+==== Water Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:WaterParcel`
+| Preferred Label | Water Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<BaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[InterstateParcel]]
+==== Interstate Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:InterstateParcel`
+| Preferred Label | Interstate Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<BaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[NonBaseParcel]]
+==== Non-Base Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:NonBaseParcel`
+| Preferred Label | Non-Base Parcel
+| Definition | A Parcel that must overlap one or more instances of <<BaseParcel>>
+| Is Defined By | This Model
+| Sub-class Of | <<Parcel>>
+| Expected Properties | <<overlaps>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model, instead specialised forms of it (subclasses) are
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[BuildingParcel]]
+==== Building Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:BuildingParcel`
+| Preferred Label | Building Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<NonBaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[EasementParcel]]
+==== Easement Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:EasementParcel`
+| Preferred Label | Easement Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<NonBaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[InterestParcel]]
+==== Interest Parcel
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:InterestParcel`
+| Preferred Label | Interest Parcel
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<NonBaseParcel>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[FeatureCollection]]
+==== Feature Collection
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:FeatureCollection`
+| Preferred Label | Feature Collection
+| Definition | A collection of individual Features
+| Is Defined By | <<GEO>>
+| Sub-class Of | <<SpatialObject>>
+| Expected Properties | <<member>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[ParcelAggregate]]
+==== Parcel Aggregate
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `csdm:ParcelAggregate`
+| Preferred Label | Parcel Aggregate
+| Definition | A parcel aggregate is a collection of parcels whose collective extent may be described as a spatial unit
+| Is Defined By | <<CSDM>>
+| Sub-class Of | <<FeatureCollection>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[Property]]
+==== Property
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:Property`
+| Preferred Label | Property
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<ParcelAggregate>>
+| Scope Note | This class is not expected to be instantiated directly through use of this model, instead specialised forms of it (subclasses) are
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[AddressableProperty]]
+==== Addressable Property
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:AddressableProperty`
+| Preferred Label | Addressable Property
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<Property>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[RuralProperty]]
+==== Rural Property
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:RuralProperty`
+| Preferred Label | Rural Property
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<Property>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[TitleProperty]]
+==== Title Property
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:TitleProperty`
+| Preferred Label | Title Property
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<Property>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[ValuationProperty]]
+==== Valuation Property
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:ValuationProperty`
+| Preferred Label | Valuation Property
+| Definition |
+| Is Defined By | This Model
+| Sub-class Of | <<Property>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[Geometry]]
+==== Geometry
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:Geometry`
+| Preferred Label | Geometry
+| Definition |
+| Is Defined By | <<GEO>>
+| Sub-class Of | <<SpatialObject>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+
+[[Properties]]
+=== Properties
+
+* <<member>>
+* <<hasGeometry>>
+* <<overlaps>>
+
+[[member]]
+==== member
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `rdfs:member`
+| Preferred Label | member
+| Definition | A member of the subject resource
+| Is Defined By | <<RDFS>>
+| Example 
+a| [source,turtle]
+----
+----
+|===
+
+[[hasGeometry]]
+==== has geometry
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:hasGeometry`
+| Preferred Label | has geometry
+| Definition | A spatial representation for a given Feature
+| Is Defined By | <<GEO>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+
+[[overlaps]]
+==== overlaps
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `geo:sfOverlaps`
+| Preferred Label | overlaps
+| Definition | _Simple Features_ <<ISO19125-1>> topological relation "overlaps"
+| Is Defined By | <<GEO>>
+| Example
+a| [source,turtle]
+----
+----
+|===

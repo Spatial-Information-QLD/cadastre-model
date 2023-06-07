@@ -1,0 +1,68 @@
+== Introduction
+
+This model presents only a very basic class hierarchy for cadastral objects, _Parcels_ and _Parcel Aggregates_, both of which it inherits from the _ICSM Conceptual Model for 3D Cadastral Survey Dataset Submissions_ (CSDM) <<CSDM>>. That model, in turn, inherits basic spatial object classes and their relationships from <<GEO>>: _Features_, _Feature Collections_ and _Geometries_, all of which are specialised forms of _Spatial Object_.
+
+=== Major Modelling Principles
+
+Major modelling principles present in this model are:
+
+. Overlapping and non-overlapping Parcels
+. 3D Parcels
+. Parcel Aggregates and Properties
+
+==== Overlapping and non-overlapping Parcels
+
+All the area of the State of Queensland is, in theory, covered by a single layer of contiguous, non-overlapping, parcels which are called _Base Parcels_ and of which there are various types:
+
+* _Lot_, _Road_, _Water_ and the edge case _Interstate_
+
+These parcels _MAY NOT_ have an _overlaps_ relationship, declared or calculated, that indicates another _Base Parcel_.
+
+All types of _Non-Base Parcel_, _MUST_ overlap one or more _Base Parcel_. The subtypes of _Non-Base Parcel_ are:
+
+* _Building_, _Easement_ and _Interest_
+
+==== 3D Parcels
+
+Being described in 3-dimensions is a possible attribute of any type of Parcel, thus there is no 3D or _Volumetric_ parcel directly.
+
+==== Parcel Aggregates and Properties
+
+Parcel Aggregates are special kinds of Feature Collections whose spatial projection - their Geometry - is the union of the Parcels that are members of collection.
+
+Property is a special kind of Parcel Aggregate, some forms of which may be required to have their constituent Parcels touching one another. Other types may not have this restriction.
+
+=== Sources of Requirements
+
+This model was initially built to represent the various types of cadastral parcel proposed for use in Queensland's updated cadastral maintenance environment as designed in 2022-2023.
+
+Overarching objects for this model are to:
+
+* be a system-independent (conceptual/logical) expression of Queensland's cadastral data model
+* allow for the integration of cadastral information with feature labelling information, such as addressing, feature naming and road naming
+* act as a candidate (inter)national cadastral data model for Australia & New Zealand, should ANZ move to a harmonised model
+* allow for interoperability with other major spatial data initiatives in Australia, in particular the _FSDF Supermodel_ <<FSDFSM>>.
+
+Detailed requirements for this model all stem from these top-level requirements. The individual requirements are listed in the <<Requirements>> section.
+
+=== Model resources
+
+This document is this model's "Specification" which is its authoritative, human-readable, definition document. This model also contains other resources with other roles:
+
+[width="75%", cols="2,1,4"]
+|===
+| Resource | Role | Notes
+
+| https://linked.data.gov.au/def/cad.ttl[Ontology] | _Schema_ | The technical, machine-readable, version of this model
+| <<Supporting Vocabularies>> | _Vocabulary_ | The codelist vocabularies developed for this model and links to others defined elsewhere but used by this model
+| <<Requirements>> Section | _Guidance_ | The Requirements addressed by this model
+| <<Validation>> Section & https://linked.data.gov.au/def/cad/validator.ttl[SHACL Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
+| <<Examples>> Section
+&
+https://github.com/Spatial-Information-QLD/cadastre-model/tree/main/extended-examples[Extended example data files] | _Example_ | Examples of data conforming, and some not conforming, to this model
+| https://github.com/Spatial-Information-QLD/cadastre-model[Code Repository] | _Code Repository_ | The online, version control, repository containing all the resources of this model
+|===
+
+Data made according to this model, when stored in one of the RDF <<RDF>> serialization formats such as Turtle <<TTL>>, is directly validatable according to this model through use of validators that are supplied, see Section <<Validation>>.
+
+All examples, including all given examples within the <<Model>> and <<Examples>> sections, are presented in Turtle <<TTL>>.
