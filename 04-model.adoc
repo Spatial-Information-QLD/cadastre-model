@@ -19,10 +19,8 @@ The Classes within this model form a single Class Hierarchy with <<SpatialObject
 ****** <<IntersectionParcel>>
 ****** <<TransportRouteParcel>>
 ***** <<WaterParcel>>
-***** <<InterstateParcel>>
 **** <<NonBaseParcel>>
-***** <<BuildingParcel>>
-***** <<EasementParcel>>
+***** <<StrataParcel>>
 ***** <<InterestParcel>>
 ** <<Geometry>>
 ** <<FeatureCollection>>
@@ -32,6 +30,8 @@ The Classes within this model form a single Class Hierarchy with <<SpatialObject
 ***** <<RuralProperty>>
 ***** <<TitleProperty>>
 ***** <<ValuationProperty>>
+**** <<WaterFeature>>
+**** <<Road>>
 
 [[SpatialObject]]
 ==== Spatial Object
@@ -221,24 +221,6 @@ a| [source,turtle]
 ----
 |===
 
-[[InterstateParcel]]
-==== Interstate Parcel
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `cad:InterstateParcel`
-| Preferred Label | Interstate Parcel
-| Definition |
-| Is Defined By | This Model
-| Sub-class Of | <<BaseParcel>>
-| Example
-a| [source,turtle]
-----
-----
-|===
-
 [[NonBaseParcel]]
 ==== Non-Base Parcel
 
@@ -259,32 +241,14 @@ a| [source,turtle]
 ----
 |===
 
-[[BuildingParcel]]
-==== Building Parcel
-
-[cols="2,6"]
-|===
-| Property | Value
-
-| IRI | `cad:BuildingParcel`
-| Preferred Label | Building Parcel
-| Definition |
-| Is Defined By | This Model
-| Sub-class Of | <<NonBaseParcel>>
-| Example
-a| [source,turtle]
-----
-----
-|===
-
-[[EasementParcel]]
+[[StrataParcel]]
 ==== Easement Parcel
 
 [cols="2,6"]
 |===
 | Property | Value
 
-| IRI | `cad:EasementParcel`
+| IRI | `cad:StrataParcel`
 | Preferred Label | Easement Parcel
 | Definition |
 | Is Defined By | This Model
@@ -437,6 +401,42 @@ a| [source,turtle]
 | Definition |
 | Is Defined By | This Model
 | Sub-class Of | <<Property>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[WaterFeature]]
+==== Water Feature
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:WaterFeature`
+| Preferred Label | Water Feature
+| Definition | An aggregation of Water Parcels used to indicate the area of a water feature
+| Is Defined By | This Model
+| Sub-class Of | <<ParcelAggregate>>
+| Example
+a| [source,turtle]
+----
+----
+|===
+
+[[Road]]
+==== Road
+
+[cols="2,6"]
+|===
+| Property | Value
+
+| IRI | `cad:Road`
+| Preferred Label | Road
+| Definition | An aggregation of Road Parcels, including Intersection and Transport Route Parcels, used to indicate the area of road
+| Is Defined By | This Model
+| Sub-class Of | <<ParcelAggregate>>
 | Example
 a| [source,turtle]
 ----
